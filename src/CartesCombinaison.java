@@ -1,0 +1,13 @@
+
+public enum CartesCombinaison {
+	PLUS_HAUTE_CARTE,
+	PAIRE,
+	DOUBLE_PAIRE,
+	BRELAN,
+	SUITE,
+	COULEUR,
+	FULL,
+	CARRE,
+	QUINTE_FLUSH,
+	QUINTE_FLUSH_ROYALE
+}
