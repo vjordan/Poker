@@ -53,4 +53,8 @@ public class Table {
 	public void setPot(int pot) {
 		this.pot = pot;
 	}
+
+	public Carte[] getCartesTable() {
+		return cartesTable;
+	}
 }

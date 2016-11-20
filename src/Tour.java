@@ -533,11 +533,41 @@ public class Tour {
 		return false;
 	}
 	
+	public void majListeJoueursTour(Joueur joueur) {
+		listeJoueursTour.remove(listeJoueursTour.indexOf(joueur));
+		nbJoueursTour--;
+	}
+	
+	public void reinitialisationMises() {
+		for (Joueur joueur : listeJoueursTour)
+			joueur.setMise(0);
+	}
+	
+	public void majMiseJoueursTour() {
+		for (Joueur joueur : listeJoueursTour)
+			joueur.setMiseTour(joueur.getMiseTour() + joueur.getMise());
+	}
+	
+	public void afficherInfosTour() {
+		for (Joueur joueur : listeJoueursTour)
+			System.out.println(joueur.toString());
+		System.out.println(table.toString());
+		for (Joueur joueur : listeJoueursTour)
+			joueur.affichageMain();
+		System.out.println();
+	}
+
+	public static void setNbTours(int nbTours) {
+		Tour.nbTours = nbTours;
+	}
+	
 	public void finTour(ArrayList<Joueur> listeJoueursPartie) {
 		int miseMax = 0;
 		
 		if (nbJoueursTour > 1) {
-			Joueur vainqueur = listeJoueursTour.get(0);
+			CombinaisonVainqueur meilleureCombinaison = new CombinaisonVainqueur(listeJoueursTour, table);
+			Joueur vainqueur = meilleureCombinaison.getVainqueur();
+			//Joueur vainqueur = listeJoueursTour.get(0);
 			System.out.println("Vainqueur du tour : " + vainqueur.getNom());
 			System.out.println();
 			
@@ -566,33 +596,5 @@ public class Tour {
 		}
 		else
 			listeJoueursTour.get(0).setCompte(listeJoueursTour.get(0).getCompte()+table.getPot());
-	}
-	
-	public void majListeJoueursTour(Joueur joueur) {
-		listeJoueursTour.remove(listeJoueursTour.indexOf(joueur));
-		nbJoueursTour--;
-	}
-	
-	public void reinitialisationMises() {
-		for (Joueur joueur : listeJoueursTour)
-			joueur.setMise(0);
-	}
-	
-	public void majMiseJoueursTour() {
-		for (Joueur joueur : listeJoueursTour)
-			joueur.setMiseTour(joueur.getMiseTour() + joueur.getMise());
-	}
-	
-	public void afficherInfosTour() {
-		for (Joueur joueur : listeJoueursTour)
-			System.out.println(joueur.toString());
-		System.out.println(table.toString());
-		for (Joueur joueur : listeJoueursTour)
-			joueur.affichageMain();
-		System.out.println();
-	}
-
-	public static void setNbTours(int nbTours) {
-		Tour.nbTours = nbTours;
 	}
 }

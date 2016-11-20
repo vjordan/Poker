@@ -12,4 +12,12 @@ public class Carte {
 	public String toString() {
 		return valeur + "/" + couleur;
 	}
+
+	public CarteCouleur getCouleur() {
+		return couleur;
+	}
+
+	public CarteValeur getValeur() {
+		return valeur;
+	}
 }
