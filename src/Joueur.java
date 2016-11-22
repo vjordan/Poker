@@ -16,7 +16,6 @@ public class Joueur {
 	public void main(ArrayList<Carte> paquetCartes) {
 		for (int i=0; i<2 ;i++)
 			main[i] = paquetCartes.remove(0);
-		affichageMain();
 	}
 
 	public void affichageMain() {

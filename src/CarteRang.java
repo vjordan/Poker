@@ -1,5 +1,5 @@
 
-public enum CarteValeur {
+public enum CarteRang {
 	DEUX (2),
 	TROIS (3),
 	QUATRE (4),
@@ -16,7 +16,7 @@ public enum CarteValeur {
 	
 	private int index;
 	
-	private CarteValeur (int index) {
+	private CarteRang (int index) {
 		this.index = index;
 	}
 

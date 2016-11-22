@@ -1,23 +1,30 @@
 
-public class Carte {
+public class Carte implements Comparable<Carte>{
 	
 	private CarteCouleur couleur;
-	private CarteValeur valeur;
+	private CarteRang rang;
 	
-	public Carte (CarteCouleur couleur, CarteValeur valeur) {
+	public Carte (CarteCouleur couleur, CarteRang rang) {
 		this.couleur = couleur;
-		this.valeur = valeur;
+		this.rang = rang;
 	}
 
 	public String toString() {
-		return valeur + "/" + couleur;
+		return rang + "/" + couleur;
 	}
 
+	public int compareTo (Carte carte) {
+		int val = this.getRang().getIndex() - carte.getRang().getIndex();
+		if (val == 0)
+			return this.getCouleur().getIndex() - carte.getCouleur().getIndex();
+		return val;
+	}
+	
 	public CarteCouleur getCouleur() {
 		return couleur;
 	}
 
-	public CarteValeur getValeur() {
-		return valeur;
+	public CarteRang getRang() {
+		return rang;
 	}
 }

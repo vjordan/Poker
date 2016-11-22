@@ -21,22 +21,25 @@ public class Tour {
 		listeJoueursTour = new ArrayList<Joueur>();
 		paquetCartes = new ArrayList<Carte>();
 		
-		nbTours++;		
+		nbTours++;
+		table.setPot(table.getPot()+VALEUR_PETITE_BLINDE+VALEUR_GROSSE_BLINDE);
+		
 		for (int i=0; i<listeJoueursPartie.size(); i++) {
 			listeJoueursTour.add(listeJoueursPartie.get(i));
 		}
 		nbJoueursTour = listeJoueursTour.size();
+		
 		tourEntete();
 
 		donneur(listeJoueursBase);
 		petiteBlind();
 		grosseBlind();
-		affichageDebutTour();
 		
 		constitutionPaquetCartes();
 		melangePaquetCartes();
 		distributionCartes();
 		
+		afficherInfosTour();	
 		preFlop(listeJoueursPartie);
 	}
 
@@ -118,24 +121,21 @@ public class Tour {
 			grosseBlind.setCompte(grosseBlind.getCompte()-VALEUR_GROSSE_BLINDE);
 		else
 			grosseBlind.setCompte(0);
-		
-		System.out.println();
 	}
 	
-	public void affichageDebutTour() {
+	public void afficherInfosTour() {
 		for (Joueur joueur : listeJoueursTour)
 			System.out.println(joueur.toString());
-		
-		table.setPot(table.getPot()+VALEUR_PETITE_BLINDE+VALEUR_GROSSE_BLINDE);
-		System.out.println();
 		System.out.println(table.toString());
+		for (Joueur joueur : listeJoueursTour)
+			joueur.affichageMain();
 		System.out.println();
 	}
 	
 	public void constitutionPaquetCartes() {
 		for (CarteCouleur couleur : CarteCouleur.values())
-			for (CarteValeur valeur : CarteValeur.values())
-				paquetCartes.add(new Carte(couleur,valeur));
+			for (CarteRang rang : CarteRang.values())
+				paquetCartes.add(new Carte(couleur,rang));
 	}
 	
 	public void melangePaquetCartes() {
@@ -547,15 +547,6 @@ public class Tour {
 		for (Joueur joueur : listeJoueursTour)
 			joueur.setMiseTour(joueur.getMiseTour() + joueur.getMise());
 	}
-	
-	public void afficherInfosTour() {
-		for (Joueur joueur : listeJoueursTour)
-			System.out.println(joueur.toString());
-		System.out.println(table.toString());
-		for (Joueur joueur : listeJoueursTour)
-			joueur.affichageMain();
-		System.out.println();
-	}
 
 	public static void setNbTours(int nbTours) {
 		Tour.nbTours = nbTours;
@@ -564,12 +555,13 @@ public class Tour {
 	public void finTour(ArrayList<Joueur> listeJoueursPartie) {
 		int miseMax = 0;
 		
+		System.out.println("Cartes table :");
+		table.affichageCartesTable();
+		System.out.println();
+		
 		if (nbJoueursTour > 1) {
 			CombinaisonVainqueur meilleureCombinaison = new CombinaisonVainqueur(listeJoueursTour, table);
 			Joueur vainqueur = meilleureCombinaison.getVainqueur();
-			//Joueur vainqueur = listeJoueursTour.get(0);
-			System.out.println("Vainqueur du tour : " + vainqueur.getNom());
-			System.out.println();
 			
 			for (Joueur joueur : listeJoueursTour) {
 				if (joueur.getMiseTour() > miseMax)
