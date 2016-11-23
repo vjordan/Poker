@@ -12,6 +12,6 @@ public enum CarteCouleur {
 	}
 
 	public int getIndex() {
-		return index;
+		return index; 
 	}
 }

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Combinaison implements Comparable<Combinaison>{
 
 	private ArrayList<Carte> cartes = new ArrayList<Carte>();
+	private ArrayList<Carte> cartesDepartager = new ArrayList<Carte>();
 	private CombinaisonValeur valeur;
 	
 	public Combinaison (Carte carte1, Carte carte2, Carte carte3, Carte carte4, Carte carte5) {
@@ -14,7 +15,16 @@ public class Combinaison implements Comparable<Combinaison>{
 	}
 	
 	public int compareTo (Combinaison combinaison) {
-		return this.getValeur().getIndex() - combinaison.getValeur().getIndex();
+		int val = this.getValeur().getIndex() - combinaison.getValeur().getIndex();
+		if (val == 0) {
+			for (int i=0; i<this.cartesDepartager.size(); i++) {
+				val = this.cartesDepartager.get(i).getRang().getIndex();
+				if (combinaison.cartesDepartager.get(i).getRang().getIndex() != val) {
+					return val - combinaison.cartesDepartager.get(i).getRang().getIndex();
+				}
+			}
+		}
+		return val;
 	}
 	
 	public String toString() {
@@ -31,5 +41,9 @@ public class Combinaison implements Comparable<Combinaison>{
 
 	public void setValeur(CombinaisonValeur valeur) {
 		this.valeur = valeur;
+	}
+
+	public void setCartesDepartager(ArrayList<Carte> cartesDepartager) {
+		this.cartesDepartager = cartesDepartager;
 	}
 }

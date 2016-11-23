@@ -560,7 +560,7 @@ public class Tour {
 		System.out.println();
 		
 		if (nbJoueursTour > 1) {
-			CombinaisonVainqueur meilleureCombinaison = new CombinaisonVainqueur(listeJoueursTour, table);
+			CombinaisonCalculateur meilleureCombinaison = new CombinaisonCalculateur(listeJoueursTour, table);
 			Joueur vainqueur = meilleureCombinaison.getVainqueur();
 			
 			for (Joueur joueur : listeJoueursTour) {

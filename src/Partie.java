@@ -19,7 +19,7 @@ public class Partie {
 			demandeNomsJoueurs();
 			recapitulatifJoueurs();
 			while (listeJoueurs.size() > 1) {
-				Tour tour = new Tour(listeJoueurs, listeJoueursBase);
+				new Tour(listeJoueurs, listeJoueursBase);
 				recapitulatifJoueurs();
 			}
 			affichageVainqueur();

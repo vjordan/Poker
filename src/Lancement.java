@@ -1,5 +1,5 @@
 
-public class Start {
+public class Lancement {
 
 	public static void main(String[] args) {
 		
