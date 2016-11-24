@@ -8,19 +8,15 @@ public class Tour {
 	private final static int VALEUR_GROSSE_BLINDE = 20;
 	
 	private static int nbTours;
-	private Table table;
+	private Table table = new Table();
 	private int nbJoueursTour;
-	private ArrayList<Joueur> listeJoueursTour;
-	private ArrayList<Carte> paquetCartes;
+	private ArrayList<Joueur> listeJoueursTour = new ArrayList<Joueur>();
+	private ArrayList<Carte> paquetCartes = new ArrayList<Carte>();
 	private Joueur donneur, petiteBlind, grosseBlind;
 	private Scanner sc = new Scanner(System.in);
 	private Scanner sc2 = new Scanner(System.in);
 	
 	public Tour(ArrayList<Joueur> listeJoueursPartie, ArrayList<Joueur> listeJoueursBase) {
-		table = new Table();
-		listeJoueursTour = new ArrayList<Joueur>();
-		paquetCartes = new ArrayList<Carte>();
-		
 		nbTours++;
 		table.setPot(table.getPot()+VALEUR_PETITE_BLINDE+VALEUR_GROSSE_BLINDE);
 		
@@ -547,10 +543,6 @@ public class Tour {
 		for (Joueur joueur : listeJoueursTour)
 			joueur.setMiseTour(joueur.getMiseTour() + joueur.getMise());
 	}
-
-	public static void setNbTours(int nbTours) {
-		Tour.nbTours = nbTours;
-	}
 	
 	public void finTour(ArrayList<Joueur> listeJoueursPartie) {
 		int miseMax = 0;
@@ -561,24 +553,38 @@ public class Tour {
 		
 		if (nbJoueursTour > 1) {
 			CombinaisonCalculateur meilleureCombinaison = new CombinaisonCalculateur(listeJoueursTour, table);
-			Joueur vainqueur = meilleureCombinaison.getVainqueur();
+			ArrayList<Joueur> listeVainqueurs = meilleureCombinaison.getVainqueur();
+			int nbVainqueurs = listeVainqueurs.size();
 			
 			for (Joueur joueur : listeJoueursTour) {
 				if (joueur.getMiseTour() > miseMax)
 					miseMax = joueur.getMiseTour();
-			}		
-			if (vainqueur.getMiseTour() == miseMax)
-				vainqueur.setCompte(vainqueur.getCompte()+table.getPot());
+			}
+			
+			if (nbVainqueurs == 1) {
+				Joueur vainqueur = listeVainqueurs.get(0);		
+				if (vainqueur.getMiseTour() == miseMax)
+					vainqueur.setCompte(vainqueur.getCompte()+table.getPot());
+				else {
+					int gain = listeJoueursTour.size()*vainqueur.getMiseTour();
+					int potReste = table.getPot()-gain;
+					int quotientPotReste = potReste / (listeJoueursTour.size()-1);
+					int moduloPotReste = potReste - (quotientPotReste*(listeJoueursTour.size()-1));
+					
+					vainqueur.setCompte(vainqueur.getCompte()+gain+moduloPotReste);
+					listeJoueursTour.remove(listeJoueursTour.indexOf(vainqueur));
+					nbJoueursTour--;
+					for (Joueur joueur : listeJoueursTour)
+						joueur.setCompte(joueur.getCompte()+quotientPotReste);
+				}
+			}
 			else {
-				int gain = listeJoueursTour.size()*vainqueur.getMiseTour();
-				int potReste = table.getPot()-gain;
-				int quotientPotReste = potReste / (listeJoueursTour.size()-1);
-				int moduloPotReste = potReste - (quotientPotReste*(listeJoueursTour.size()-1));
-				
-				vainqueur.setCompte(vainqueur.getCompte()+gain+moduloPotReste);
-				listeJoueursTour.remove(listeJoueursTour.indexOf(vainqueur));
-				for (Joueur joueur : listeJoueursTour)
-					joueur.setCompte(joueur.getCompte()+quotientPotReste);
+				int gainVainqueur = table.getPot()/nbVainqueurs;
+				int potReste = table.getPot() - gainVainqueur*nbVainqueurs;
+				for (Joueur vainqueur : listeVainqueurs) {
+					vainqueur.setCompte(vainqueur.getCompte()+gainVainqueur);
+				}
+				listeVainqueurs.get(0).setCompte(listeVainqueurs.get(0).getCompte()+potReste);
 			}
 			
 			for (Joueur joueur : listeJoueursTour) {
@@ -588,5 +594,9 @@ public class Tour {
 		}
 		else
 			listeJoueursTour.get(0).setCompte(listeJoueursTour.get(0).getCompte()+table.getPot());
+	}
+	
+	public static void setNbTours(int nbTours) {
+		Tour.nbTours = nbTours;
 	}
 }

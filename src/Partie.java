@@ -6,7 +6,6 @@ public class Partie {
 	private int nbJoueurs;
 	private ArrayList<Joueur> listeJoueurs;
 	private ArrayList<Joueur> listeJoueursBase;
-	private boolean rejouer;
 	private Scanner sc = new Scanner(System.in);
 	
 	public Partie() {
@@ -23,8 +22,7 @@ public class Partie {
 				recapitulatifJoueurs();
 			}
 			affichageVainqueur();
-			rejouer = rejouer();
-		} while (rejouer == true);
+		} while (rejouer() == true);
 	}
 	
 	public void demandeNbJoueurs () {
@@ -96,7 +94,7 @@ public class Partie {
 			return true;
 		else
 		{
-			System.out.println("Au revoir.");
+			System.out.println("Fin de la partie.");
 			return false;
 		}
 	}

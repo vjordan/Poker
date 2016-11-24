@@ -41,6 +41,10 @@ public class Joueur {
 	public int getMise() {
 		return mise;
 	}
+	
+	public void setMise(int mise) {
+		this.mise = mise;
+	}
 
 	public int getMiseTour() {
 		return miseTour;
@@ -48,10 +52,6 @@ public class Joueur {
 
 	public void setMiseTour(int miseTour) {
 		this.miseTour = miseTour;
-	}
-
-	public void setMise(int mise) {
-		this.mise = mise;
 	}
 
 	public boolean isEstDonneur() {

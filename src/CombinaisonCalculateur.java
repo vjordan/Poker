@@ -3,12 +3,11 @@ import java.util.Collections;
 
 public class CombinaisonCalculateur {
 
-	private Joueur vainqueur;
+	private ArrayList<Joueur> vainqueur = new ArrayList<Joueur>();
 	private ArrayList<Combinaison> combinaisonsJoueur;
-	private ArrayList<Combinaison> listeMeilleureCombinaisonJoueurs;
+	private ArrayList<Combinaison> listeMeilleureCombinaisonJoueurs = new ArrayList<Combinaison>();
 	
 	public CombinaisonCalculateur (ArrayList<Joueur> listeJoueurs, Table table) {
-		listeMeilleureCombinaisonJoueurs = new ArrayList<Combinaison>();
 		for (Joueur joueur : listeJoueurs) {
 			constitutionCombinaisons(joueur, table);
 			evaluationCombinaisons();
@@ -385,6 +384,8 @@ public class CombinaisonCalculateur {
 	
 	public void designationVainqueur(ArrayList<Joueur> listeJoueurs) {
 		ArrayList<Combinaison> listeCombinaisons = new ArrayList<Combinaison>();
+		ArrayList<Combinaison> listeMeilleuresCombinaisons = new ArrayList<Combinaison>();
+		
 		for (int i=0; i<listeMeilleureCombinaisonJoueurs.size(); i++) {
 			listeCombinaisons.add(listeMeilleureCombinaisonJoueurs.get(i));
 		}
@@ -393,16 +394,27 @@ public class CombinaisonCalculateur {
 		Collections.reverse(listeCombinaisons);
 		
 		int posVainqueur = listeMeilleureCombinaisonJoueurs.indexOf(listeCombinaisons.get(0));
-		Combinaison meilleureCombinaison = listeMeilleureCombinaisonJoueurs.get(posVainqueur);
-		vainqueur = listeJoueurs.get(posVainqueur);
+		listeMeilleuresCombinaisons.add(listeMeilleureCombinaisonJoueurs.get(posVainqueur));
+		vainqueur.add(listeJoueurs.get(posVainqueur));
+		for (int i=1; i<listeCombinaisons.size(); i++) {
+			if (listeCombinaisons.get(i).compareTo(listeCombinaisons.get(0)) == 0) {
+				posVainqueur = listeMeilleureCombinaisonJoueurs.indexOf(listeCombinaisons.get(i));
+				listeMeilleuresCombinaisons.add(listeMeilleureCombinaisonJoueurs.get(posVainqueur));
+				vainqueur.add(listeJoueurs.get(posVainqueur));
+			}
+			else
+				break;
+		}
 		
-		System.out.println("Vainqueur du tour : " + vainqueur.getNom());
-		System.out.println("Main gagnante : " + meilleureCombinaison.getValeur().getLibelle());
-		System.out.println(meilleureCombinaison.toString());
+		for (int i=0; i<vainqueur.size(); i++) {
+			System.out.println("Vainqueur du tour : " + vainqueur.get(i).getNom());
+			System.out.println("   Main gagnante : " + listeMeilleuresCombinaisons.get(i).getValeur().getLibelle());
+			System.out.println(listeMeilleuresCombinaisons.get(i).toString());
+		}
 		System.out.println();
 	}
-	
-	public Joueur getVainqueur() {
+
+	public ArrayList<Joueur> getVainqueur() {
 		return vainqueur;
 	}
 }
