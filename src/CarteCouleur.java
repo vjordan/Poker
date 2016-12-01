@@ -5,8 +5,15 @@ public enum CarteCouleur {
 	CARREAU (3),
 	COEUR (4);
 	
+	/**
+	 * valeur de la couleur de la carte
+	 */
 	private int index;
 	
+	/**
+	 * constructeur pour CarteCouleur
+	 * @param index : valeur de la couleur
+	 */
 	private CarteCouleur (int index) {
 		this.index = index;
 	}

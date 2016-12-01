@@ -14,8 +14,15 @@ public enum CarteRang {
 	ROI (13),
 	AS (14);
 	
+	/**
+	 * valeur du rang de la carte
+	 */
 	private int index;
 	
+	/**
+	 * constructeur de CarteRang
+	 * @param index : valeur du rang
+	 */
 	private CarteRang (int index) {
 		this.index = index;
 	}

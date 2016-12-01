@@ -7,13 +7,24 @@ public enum CombinaisonValeur {
 	SUITE (5, "Suite"),
 	COULEUR (6, "Couleur"),
 	FULL (7, "Full"),
-	CARRE (8, "Carre"),
+	CARRE (8, "Carré"),
 	QUINTE_FLUSH (9, "Quinte flush"),
 	QUINTE_FLUSH_ROYALE (10, "Quinte flush royale");
 	
+	/**
+	 * index référençant la valeur d'une combinaison
+	 */
 	private int index;
+	/**
+	 * libelle d'une valeur ( utilisé pour l'affichage )
+	 */
 	private String libelle;
 	
+	/**
+	 * constructeur de CombinaisonValeur
+	 * @param index : index de la valeur de la combinaison
+	 * @param libelle : libelle de la valeur de la combinaison
+	 */
 	private CombinaisonValeur (int index, String libelle) {
 		this.index = index;
 		this.libelle = libelle;
