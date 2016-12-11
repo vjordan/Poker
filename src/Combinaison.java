@@ -17,18 +17,10 @@ public class Combinaison implements Comparable<Combinaison>{
 	
 	/**
 	 * Une nouvelle combinaison est constituée de 5 cartes
-	 * @param carte1 : première carte de la combinaison
-	 * @param carte2 : seconde carte de la combinaison
-	 * @param carte3 : troisième carte de la combinaison
-	 * @param carte4 : quatrième carte de la combinaison
-	 * @param carte5 : cinquième carte de la combinaison
+	 * @param cartes : liste des cartes pour la combinaison
 	 */
-	public Combinaison (Carte carte1, Carte carte2, Carte carte3, Carte carte4, Carte carte5) {
-		cartes.add(carte1);
-		cartes.add(carte2);
-		cartes.add(carte3);
-		cartes.add(carte4);
-		cartes.add(carte5);
+	public Combinaison (ArrayList<Carte> cartes) {
+		this.cartes = cartes;
 	}
 	
 	/**

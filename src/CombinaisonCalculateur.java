@@ -39,29 +39,27 @@ public class CombinaisonCalculateur {
 	public void constitutionCombinaisons(Joueur joueur, Table table) {
 		combinaisonsJoueur = new ArrayList<Combinaison>();
 		
-		// les 21 combinaisons sont écrites en dur, car plusieurs problème se posent en l'implémentant autrement
-		// à terme, il faudrait modifier la constitution des combinaisons
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[2]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[3]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[2],table.getCartesTable()[3]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[2],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[3]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[1],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],joueur.getMain()[1],table.getCartesTable()[2],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[3]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],table.getCartesTable()[0],table.getCartesTable()[2],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[0],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[3]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[1],table.getCartesTable()[0],table.getCartesTable()[2],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(joueur.getMain()[1],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[3],table.getCartesTable()[4]));
-		combinaisonsJoueur.add(new Combinaison(table.getCartesTable()[0],table.getCartesTable()[1],table.getCartesTable()[2],table.getCartesTable()[3],table.getCartesTable()[4]));	
+		// on rassemble les 2 cartes du joueur et les 5 cartes de la table dans une liste
+		ArrayList<Carte> cartesEnsemble = new ArrayList<Carte>();
+		for (int i=0; i<5; i++) {
+			if (i<2)
+				cartesEnsemble.add(joueur.getMain()[i]);
+			cartesEnsemble.add(table.getCartesTable()[i]);
+		}
+		
+		// constitution de chacune des combinaisons pour un joueur
+		for (int i=0; i<6; i++) {
+			for (int j=i; j<7; j++) {
+				if (i != j) {
+					ArrayList<Carte> cartesCombinaison = new ArrayList<Carte>();
+					for (Carte carte : cartesEnsemble)
+						cartesCombinaison.add(carte);
+					cartesCombinaison.remove(j);
+					cartesCombinaison.remove(i);
+					combinaisonsJoueur.add(new Combinaison(cartesCombinaison));
+				}
+			}
+		}
 	}
 	
 	/**
@@ -88,24 +86,24 @@ public class CombinaisonCalculateur {
 			combinaison.setValeur(CombinaisonValeur.QUINTE_FLUSH_ROYALE);
 		else if (testerQuinteFlush(combinaison))	
 			combinaison.setValeur(CombinaisonValeur.QUINTE_FLUSH);
-			else if (testerCarre(combinaison))			
-				combinaison.setValeur(CombinaisonValeur.CARRE);
-				else if (testerFull(combinaison))			
-					combinaison.setValeur(CombinaisonValeur.FULL);
-					else if (testerCouleur(combinaison))
-						combinaison.setValeur(CombinaisonValeur.COULEUR);
-						else if (testerSuite(combinaison))
-							combinaison.setValeur(CombinaisonValeur.SUITE);
-							else if (testerBrelan(combinaison))
-								combinaison.setValeur(CombinaisonValeur.BRELAN);
-								else if (testerDoublePaire(combinaison))
-									combinaison.setValeur(CombinaisonValeur.DOUBLE_PAIRE);
-									else if (testerPaire(combinaison))
-										combinaison.setValeur(CombinaisonValeur.PAIRE);
-										else {
-											testerPlusHauteCarte(combinaison);
-											combinaison.setValeur(CombinaisonValeur.PLUS_HAUTE_CARTE);
-										}
+		else if (testerCarre(combinaison))			
+			combinaison.setValeur(CombinaisonValeur.CARRE);
+		else if (testerFull(combinaison))			
+			combinaison.setValeur(CombinaisonValeur.FULL);
+		else if (testerCouleur(combinaison))
+			combinaison.setValeur(CombinaisonValeur.COULEUR);
+		else if (testerSuite(combinaison))
+			combinaison.setValeur(CombinaisonValeur.SUITE);
+		else if (testerBrelan(combinaison))
+			combinaison.setValeur(CombinaisonValeur.BRELAN);
+		else if (testerDoublePaire(combinaison))
+			combinaison.setValeur(CombinaisonValeur.DOUBLE_PAIRE);
+		else if (testerPaire(combinaison))
+			combinaison.setValeur(CombinaisonValeur.PAIRE);
+		else {
+			testerPlusHauteCarte(combinaison);
+			combinaison.setValeur(CombinaisonValeur.PLUS_HAUTE_CARTE);
+		}
 	}
 	
 	/**

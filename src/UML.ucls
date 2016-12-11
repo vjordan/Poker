@@ -19,16 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="Lancement" project="Poker" file="/Poker/src/Lancement.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="403" y="137"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="Partie" project="Poker" file="/Poker/src/Partie.java" binary="false" 
+  <class id="3" language="java" name="Partie" project="Poker" file="/Poker/src/Partie.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="819" y="155"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="5" language="java" name="CarteCouleur" project="Poker" file="/Poker/src/CarteCouleur.java" 
+  <enumeration id="4" language="java" name="CarteCouleur" project="Poker" file="/Poker/src/CarteCouleur.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="516" y="1089"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <enumeration id="6" language="java" name="CombinaisonValeur" project="Poker" file="/Poker/src/CombinaisonValeur.java" 
+  <enumeration id="5" language="java" name="CombinaisonValeur" project="Poker" file="/Poker/src/CombinaisonValeur.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1255" y="1457"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -55,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="7" language="java" name="Table" project="Poker" file="/Poker/src/Table.java" binary="false" 
+  <class id="6" language="java" name="Table" project="Poker" file="/Poker/src/Table.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1195" y="586"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,7 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="Tour" project="Poker" file="/Poker/src/Tour.java" binary="false" 
+  <class id="7" language="java" name="Tour" project="Poker" file="/Poker/src/Tour.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="816" y="586"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="Combinaison" project="Poker" file="/Poker/src/Combinaison.java" binary="false" 
+  <class id="8" language="java" name="Combinaison" project="Poker" file="/Poker/src/Combinaison.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="801" y="1458"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="Carte" project="Poker" file="/Poker/src/Carte.java" binary="false" 
+  <class id="9" language="java" name="Carte" project="Poker" file="/Poker/src/Carte.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="810" y="1091"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -91,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="11" language="java" name="CarteRang" project="Poker" file="/Poker/src/CarteRang.java" binary="false" 
+  <enumeration id="10" language="java" name="CarteRang" project="Poker" file="/Poker/src/CarteRang.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1083" y="1086"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,60 +91,68 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
+  <class id="11" language="java" name="Lancement" project="Poker" file="/Poker/src/Lancement.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="402" y="148"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <association id="12">    
+    <bendpoint x="879" y="1255"/>    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="13" name="table">        
+      <attribute id="13" name="cartes">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="14" minimum="0" maximum="1">        
+      <multiplicity id="14" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="15">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="16" name="valeur">        
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="16" name="paquetCartes">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="17" minimum="0" maximum="1">        
+      <multiplicity id="17" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="18">    
-    <bendpoint x="557" y="275"/>    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="19" name="listeJoueurs">        
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="19" name="rang">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="20" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="21">    
-    <bendpoint x="1038" y="890"/>    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="22" name="cartesTable">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="23" minimum="0" maximum="2147483647">        
+      <multiplicity id="20" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="21">    
+    <bendpoint x="594" y="635"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="22" name="listeJoueursTour">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="24">    
-    <bendpoint x="612" y="356"/>    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="25" name="listeJoueursBase">        
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="25" name="vainqueur">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="26" minimum="0" maximum="2147483647">        
@@ -164,22 +163,22 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="27">    
-    <bendpoint x="560" y="1384"/>    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="28" name="combinaisonsJoueur">        
+    <bendpoint x="583" y="567"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="28" name="petiteBlind">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="29" minimum="0" maximum="2147483647">        
+      <multiplicity id="29" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="30">    
-    <bendpoint x="583" y="567"/>    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="31" name="petiteBlind">        
+    <bendpoint x="595" y="706"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="31" name="donneur">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="32" minimum="0" maximum="1">        
@@ -190,62 +189,62 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="33">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="34" name="rang">        
+    <bendpoint x="555" y="868"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="34" name="main">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="35" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="37" name="paquetCartes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="38" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="39">    
-    <bendpoint x="879" y="1255"/>    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="40" name="cartes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="41" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="42">    
-    <bendpoint x="568" y="1504"/>    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="43" name="listeMeilleureCombinaisonJoueurs">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="44" minimum="0" maximum="2147483647">        
+      <multiplicity id="35" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="45">    
-    <bendpoint x="594" y="635"/>    
+  <association id="36">    
+    <bendpoint x="739" y="1252"/>    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="46" name="listeJoueursTour">        
+      <attribute id="37" name="cartesDepartager">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="47" minimum="0" maximum="2147483647">        
+      <multiplicity id="38" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="39">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="40" name="table">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="42">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="43" name="valeur">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <bendpoint x="602" y="492"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="46" name="grosseBlind">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
@@ -253,59 +252,61 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="48">    
-    <bendpoint x="555" y="868"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="49" name="main">        
+    <bendpoint x="1038" y="890"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="49" name="cartesTable">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="50" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="51">    
-    <bendpoint x="602" y="492"/>    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="52" name="grosseBlind">        
+    <bendpoint x="568" y="1504"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="52" name="listeMeilleureCombinaisonJoueurs">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="53" minimum="0" maximum="1">        
+      <multiplicity id="53" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="54">    
-    <bendpoint x="595" y="706"/>    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="55" name="donneur">        
+    <bendpoint x="560" y="1384"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="55" name="combinaisonsJoueur">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="56" minimum="0" maximum="1">        
+      <multiplicity id="56" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="57">    
+    <bendpoint x="557" y="275"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="58" name="listeJoueurs">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="59" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="57">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="58" name="couleur">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="59" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="60">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="61" name="vainqueur">        
+    <bendpoint x="612" y="356"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="61" name="listeJoueursBase">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="62" minimum="0" maximum="2147483647">        
@@ -316,16 +317,15 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="63">    
-    <bendpoint x="739" y="1252"/>    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="64" name="cartesDepartager">        
+      <attribute id="64" name="couleur">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="65" minimum="0" maximum="2147483647">        
+      <multiplicity id="65" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
