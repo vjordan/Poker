@@ -1,3 +1,4 @@
+package main;
 
 public enum CombinaisonValeur {
 	PLUS_HAUTE_CARTE (1, "Plus haute carte"),
@@ -30,10 +31,18 @@ public enum CombinaisonValeur {
 		this.libelle = libelle;
 	}
 
+	/**
+	 * getter pour "index"
+	 * @return l'index de la valeur de la combinaison
+	 */
 	public int getIndex() {
 		return index;
 	}
 
+	/**
+	 * getter pour "libelle"
+	 * @return le libellé de la valeur de la combinaison
+	 */
 	public String getLibelle() {
 		return libelle;
 	}

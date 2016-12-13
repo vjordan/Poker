@@ -1,3 +1,4 @@
+package main;
 
 public class Carte implements Comparable<Carte>{
 	
@@ -39,10 +40,18 @@ public class Carte implements Comparable<Carte>{
 		return val;
 	}
 	
+	/**
+	 * getter pour "couleur"
+	 * @return la couleur de la carte
+	 */
 	public CarteCouleur getCouleur() {
 		return couleur;
 	}
 
+	/**
+	 * getter pour "rang"
+	 * @return le rang de la carte
+	 */
 	public CarteRang getRang() {
 		return rang;
 	}

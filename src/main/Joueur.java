@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 
 public class Joueur {
@@ -60,42 +62,82 @@ public class Joueur {
 		return nom + " : Tapis = " + compte;
 	}
 
+	/**
+	 * getter pour "nom"
+	 * @return le nom du joueur
+	 */
 	public String getNom() {
 		return nom;
 	}
 
+	/**
+	 * getter pour "compte"
+	 * @return le tapis du joueur
+	 */
 	public int getCompte() {
 		return compte;
 	}
 
+	/**
+	 * setter pour "compte"
+	 * @param compte : tapis du joueur
+	 */
 	public void setCompte(int compte) {
 		this.compte = compte;
 	}
 
+	/**
+	 * getter pour "mise"
+	 * @return la mise du joueur pendant un tour de mises
+	 */
 	public int getMise() {
 		return mise;
 	}
 	
+	/**
+	 * setter pour "mise"
+	 * @param mise : mise du joueur pendant un tour de mises
+	 */
 	public void setMise(int mise) {
 		this.mise = mise;
 	}
 
+	/**
+	 * getter pour "miseTotale"
+	 * @return la mise du joueur pendant un tour entier
+	 */
 	public int getMiseTotale() {
 		return miseTotale;
 	}
 
+	/**
+	 * setter pour "miseTotale"
+	 * @param miseTotale : mise du joueur pendant un tour entier
+	 */
 	public void setMiseTotale(int miseTotale) {
 		this.miseTotale = miseTotale;
 	}
 
+	/**
+	 * getter pour "estDonneur"
+	 * @return un booléen pour savoir si le joueur est le donneur de la partie ou pas
+	 */
 	public boolean isEstDonneur() {
 		return estDonneur;
 	}
 
+	/**
+	 * setter pour "estDonneur"
+	 * @param estDonneur : valeur booléenne qui indique si le joueur est donneur de la partie ou pas
+	 */
 	public void setEstDonneur(boolean estDonneur) {
 		this.estDonneur = estDonneur;
 	}
 
+	/**
+	 * getter pour "main"
+	 * @return les deux cartes privées du joueur
+	 */
 	public Carte[] getMain() {
 		return main;
 	}

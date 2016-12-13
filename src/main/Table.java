@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 
 public class Table {
@@ -77,14 +79,26 @@ public class Table {
 		return "Pot = " + pot;
 	}
 
+	/**
+	 * getter pour "pot"
+	 * @return la valeur du pot de la table
+	 */
 	public int getPot() {
 		return pot;
 	}
 
+	/**
+	 * setter pour "pot"
+	 * @param pot : montant du pot de la table
+	 */
 	public void setPot(int pot) {
 		this.pot = pot;
 	}
 
+	/**
+	 * getter pour "cartesTable"
+	 * @return les cinq cartes communes de la table
+	 */
 	public Carte[] getCartesTable() {
 		return cartesTable;
 	}

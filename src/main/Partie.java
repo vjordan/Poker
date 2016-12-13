@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,6 +17,9 @@ public class Partie {
 	 * liste des joueurs au début de la partie : cette liste reste inchangée pendant la partie
 	 */
 	private ArrayList<Joueur> listeJoueursBase;
+	/**
+	 * scanner pour lire les entrées clavier
+	 */
 	private Scanner sc = new Scanner(System.in);
 	
 	/**

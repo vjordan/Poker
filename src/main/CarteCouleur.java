@@ -1,3 +1,4 @@
+package main;
 
 public enum CarteCouleur {
 	TREFLE (1),
@@ -18,6 +19,10 @@ public enum CarteCouleur {
 		this.index = index;
 	}
 
+	/**
+	 * getter pour "index"
+	 * @return l'index de la couleur de la carte
+	 */
 	public int getIndex() {
 		return index; 
 	}

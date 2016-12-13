@@ -1,3 +1,4 @@
+package main;
 
 public enum CarteRang {
 	DEUX (2),
@@ -27,6 +28,10 @@ public enum CarteRang {
 		this.index = index;
 	}
 
+	/**
+	 * getter pour "index"
+	 * @return l'index du rang de la carte
+	 */
 	public int getIndex() {
 		return index;
 	}

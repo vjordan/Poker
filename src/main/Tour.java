@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -45,7 +47,13 @@ public class Tour {
 	 * joueur qui verse la grosse blinde au début du tour
 	 */
 	private Joueur grosseBlind;
+	/**
+	 * scanner pour lire les entrées clavier ( chaînes de caractère )
+	 */
 	private Scanner sc = new Scanner(System.in);
+	/**
+	 * scanner pour lire les entrées clavier ( nombres entiers )
+	 */
 	private Scanner sc2 = new Scanner(System.in);
 	
 	/**
@@ -782,6 +790,10 @@ public class Tour {
 			listeJoueursTour.get(0).setCompte(listeJoueursTour.get(0).getCompte()+table.getPot());
 	}
 	
+	/**
+	 * setter pour "nbTours"
+	 * @param nbTours : nombre de tours pour la partie
+	 */
 	public static void setNbTours(int nbTours) {
 		Tour.nbTours = nbTours;
 	}

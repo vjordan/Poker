@@ -1,8 +1,15 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class CombinaisonCalculateur {
 
+	/**
+	 * instance unique de la classe ( design pattern singleton )
+	 */
+	private static CombinaisonCalculateur COMBI_CALC_TEST = new CombinaisonCalculateur();
+	
 	/**
 	 * liste avec le ou les vainqueurs
 	 */
@@ -30,6 +37,11 @@ public class CombinaisonCalculateur {
 		}
 		designationVainqueur(listeJoueurs);
 	}
+	
+	/**
+	 * Constructeur privé pour tester les combinaisons de cartes
+	 */
+	private CombinaisonCalculateur () {}
 	
 	/**
 	 * Constitue les 21 combinaisons de 5 cartes possibles pour un joueur
@@ -492,7 +504,19 @@ public class CombinaisonCalculateur {
 		System.out.println();
 	}
 
+	/**
+	 * getter pour "vainqueur"
+	 * @return la liste du ou des vainqueur(s) du tour
+	 */
 	public ArrayList<Joueur> getVainqueur() {
 		return vainqueur;
+	}
+	
+	/**
+	 * getter pour "COMBI_CALC_TEST"
+	 * @return l'instance unique du singleton
+	 */
+	public static CombinaisonCalculateur getInstance() {
+		return COMBI_CALC_TEST;
 	}
 }

@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 
 public class Combinaison implements Comparable<Combinaison>{
@@ -50,18 +52,34 @@ public class Combinaison implements Comparable<Combinaison>{
 		return val;
 	}
 
+	/**
+	 * getter pour "valeur"
+	 * @return la valeur de la combinaison
+	 */
 	public CombinaisonValeur getValeur() {
 		return valeur;
 	}
 
+	/**
+	 * setter pour "valeur"
+	 * @param valeur : valeur de la combinaison
+	 */
 	public void setValeur(CombinaisonValeur valeur) {
 		this.valeur = valeur;
 	}
 	
+	/**
+	 * getter pour "cartes"
+	 * @return les cinq cartes constituant la combinaison
+	 */
 	public ArrayList<Carte> getCartes() {
 		return cartes;
 	}
 
+	/**
+	 * getter pour "cartesDepartager"
+	 * @param cartesDepartager : liste des cartes qui permettent de départager deux combinaisons de même valeur
+	 */
 	public void setCartesDepartager(ArrayList<Carte> cartesDepartager) {
 		this.cartesDepartager = cartesDepartager;
 	}
